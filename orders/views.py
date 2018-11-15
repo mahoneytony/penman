@@ -12,11 +12,14 @@ class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
-    def create(self, request):
-        serializer = self.serializer_class(data=request.data)
-        if serializer.is_valid():
-            Order.objects.create(serializer.validated_data)
-            return Response(serializer.validated_data,
-                   status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors)
+    # def create(self, request, *args, **kwarg):
+    #     serializer = self.serializer_class(data=request.data)
+    #     if serializer.is_valid():
+    #         Order.objects.create(serializer.validated_data)
+    #         return Response(serializer.validated_data,
+    #                status=status.HTTP_201_CREATED)
+    #     else:
+    #         return Response(serializer.errors)
+
+    # def perform_create(self, serializer):
+    #    serializer.save()
