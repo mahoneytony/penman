@@ -121,3 +121,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 APPEND_SLASH = False
+HOST_URL = 'localhost'
